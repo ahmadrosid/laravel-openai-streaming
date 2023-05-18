@@ -23,14 +23,14 @@ class StreamsController extends Controller
                     break;
                 }
 
-                echo "event: ping\n";
+                echo "event: update\n";
                 echo 'data: ' . $text;
                 echo "\n\n";
                 ob_flush();
                 flush();
             }
 
-            echo "event: ping\n";
+            echo "event: update\n";
             echo 'data: <END_STREAMING>';
             echo "\n\n";
             ob_flush();

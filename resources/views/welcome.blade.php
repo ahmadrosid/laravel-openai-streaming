@@ -60,7 +60,7 @@
             event.target.input.value = "";
 
             const source = new EventSource('/ask?question=' + input);
-            source.addEventListener('ping', function(event) {
+            source.addEventListener('update', function(event) {
                 if (event.data === "<END_STREAMING>") {
                     source.close();
                     return;
