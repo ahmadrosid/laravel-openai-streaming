@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/ask", [AskController::class, "stream"]);
+Route::get("/ask", AskController::class);

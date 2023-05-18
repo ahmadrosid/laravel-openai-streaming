@@ -7,7 +7,7 @@ use OpenAI\Laravel\Facades\OpenAI;
 
 class AskController extends Controller
 {
-    public function stream(Request $request)
+    public function __invoke(Request $request)
     {
         $question = $request->query('question');
         return response()->stream(function () use ($question) {
