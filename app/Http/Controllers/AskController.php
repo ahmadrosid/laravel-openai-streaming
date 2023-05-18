@@ -31,7 +31,7 @@ class AskController extends Controller
             }
 
             echo "event: update\n";
-            echo 'data: <END_STREAMING>';
+            echo 'data: <END_STREAMING_SSE>';
             echo "\n\n";
             ob_flush();
             flush();

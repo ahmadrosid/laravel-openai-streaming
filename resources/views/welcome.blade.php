@@ -61,7 +61,7 @@
 
             const source = new EventSource('/ask?question=' + encodeURIComponent(input));
             source.addEventListener('update', function(event) {
-                if (event.data === "<END_STREAMING>") {
+                if (event.data === "<END_STREAMING_SSE>") {
                     source.close();
                     return;
                 }
