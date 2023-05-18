@@ -59,7 +59,7 @@
             question.innerText = input;
             event.target.input.value = "";
 
-            const source = new EventSource('/ask?question=' + input);
+            const source = new EventSource('/ask?question=' + encodeURIComponent(input));
             source.addEventListener('update', function(event) {
                 if (event.data === "<END_STREAMING>") {
                     source.close();

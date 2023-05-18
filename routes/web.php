@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\StreamsController;
+use App\Http\Controllers\AskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/ask", [StreamsController::class, "stream"]);
+Route::get("/ask", [AskController::class, "stream"]);

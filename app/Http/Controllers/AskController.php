@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use OpenAI\Laravel\Facades\OpenAI;
 
-class StreamsController extends Controller
+class AskController extends Controller
 {
     public function stream(Request $request)
     {
