@@ -37,6 +37,7 @@ class AskController extends Controller
             flush();
         }, 200, [
             'Cache-Control' => 'no-cache',
+            'X-Accel-Buffering' => 'no',
             'Content-Type' => 'text/event-stream',
         ]);
     }
