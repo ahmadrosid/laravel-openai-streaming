@@ -11,14 +11,20 @@ class AskController extends Controller
     {
         $question = $request->query('question');
         return response()->stream(function () use ($question) {
-            $stream = OpenAI::completions()->createStreamed([
-                'model' => 'text-davinci-003',
-                'prompt' => $question,
+            $stream = OpenAI::chat()->createStreamed([
+                'model' => 'gpt-3.5-turbo',
+                'temperature' => 0.8,
+                'messages' => [
+                    [
+                        'role' => 'user',
+                        'content' => $question
+                    ]
+                ],
                 'max_tokens' => 1024,
             ]);
 
             foreach ($stream as $response) {
-                $text = $response->choices[0]->text;
+                $text = $response->choices[0]->delta->content;
                 if (connection_aborted()) {
                     break;
                 }
